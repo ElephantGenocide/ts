@@ -66,6 +66,7 @@ const Navbar = () => {
             {list.map((item, index) => {
               return (
                 <Link
+                  key={index}
                   href={``}
                   className="text-3xl  w-full h-20 flex justify-center items-center transition focus:text-4xl focus:text-green-700"
                 >
