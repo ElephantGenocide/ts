@@ -8,7 +8,7 @@ const Footer = () => {
       <div>© 2024 Peppa the Pig™. All Rights Reserved.</div>
       <div className="flex justify-between items-center">
         <div className="hidden md:flex">
-          {list.map((item, inedx) => {
+          {list.map((item, index) => {
             return (
               <Link key={index} href={""}>
                 {item}
