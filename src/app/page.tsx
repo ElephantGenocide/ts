@@ -1,16 +1,17 @@
 "use client";
+import React from "react";
 import Image from "next/image";
-import peppa from "./assets/peppa.png";
+import peppa from "../public/peppa.png";
 import { useState } from "react";
-import TextCards from "./Elements/TextCards";
-import HeroText from "./Elements/HeroText";
+import TextCards from "./components/TextCards";
+import HeroText from "./components/HeroText";
 
 export default function Home() {
   const [count, setCounter] = useState(0);
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row items-center justify-center m-3 h-screen">
+      <div className="flex flex-col md:flex-row items-center justify-center m-3 h-screen">
         <div className="flex flex-col gap-4 items-center">
           <Image
             src={peppa}

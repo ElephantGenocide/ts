@@ -1,5 +1,5 @@
 import React from "react";
-import { textForCards } from "../assets/stuff";
+import { textForCards } from "../../public/stuff";
 
 const TextCards = () => {
   return (

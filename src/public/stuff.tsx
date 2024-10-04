@@ -5,14 +5,19 @@ export const logo = (
   </div>
 );
 
-export const list: string[] = [
-  "Pride",
-  "Greed",
-  "Wrath",
-  "Envy",
-  "Lust",
-  "Gluttony",
-  "Sloth",
+export const navLinks = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "Family",
+    href: "/family",
+  },
+  {
+    title: "Backstory",
+    href: "/backstory",
+  },
 ];
 
 export const textForCards = [

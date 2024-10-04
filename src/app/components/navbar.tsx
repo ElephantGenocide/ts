@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { logo, list } from "@/app/assets/stuff";
+import { logo, navLinks } from "../../public/stuff";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -13,14 +13,13 @@ const Navbar = () => {
       <div className={`flex w-screen justify-between p-5 overflow-hidden`}>
         {logo}
         <ol className="gap-7 hidden md:flex">
-          {list.map((item, index) => {
+          {navLinks.map((item) => {
             return (
-              <li
-                className="cursor-pointer p-3 border-b-2 border-black transition hover:border-green-700 hover:text-green-700"
-                key={index}
-              >
-                {item}
-              </li>
+              <Link href={item.href}>
+                <li className="cursor-pointer p-3 border-b-2 border-black transition hover:border-green-700 hover:text-green-700">
+                  {item.title}
+                </li>
+              </Link>
             );
           })}
         </ol>
@@ -63,14 +62,13 @@ const Navbar = () => {
 
         <div className="flex flex-col  items-center h-screen  bg-black bg-opacity-95">
           <div className="flex flex-col gap-y-1 justify-center items-center my-20">
-            {list.map((item, index) => {
+            {navLinks.map((item) => {
               return (
                 <Link
-                  key={index}
-                  href={``}
+                  href={item.href}
                   className="text-3xl  w-full h-20 flex justify-center items-center transition focus:text-4xl focus:text-green-700"
                 >
-                  {item}
+                  {item.title}
                 </Link>
               );
             })}
