@@ -1,8 +1,6 @@
 import React from "react";
 
-type Props = {};
-
-function Slider({}: Props) {
+function Slider() {
   return <div>Slider</div>;
 }
 
