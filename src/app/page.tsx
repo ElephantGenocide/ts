@@ -1,36 +1,30 @@
 "use client";
-import React from "react";
 import Image from "next/image";
-import peppa from "../public/peppa.png";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import SimpleParallax from "simple-parallax-js";
+
+import peppaBg from "@/public/hero-paralax/peppa-bg-pc.png";
+import peppaHouse from "@/public/hero-paralax/peppa-house.png";
+import peppaClouds from "@/public/hero-paralax/peppa-clouds.png";
+import peppaSun from "@/public/hero-paralax/peppa-sun.png";
+import peppaLogo from "@/public/hero-paralax/peppa-logo.png";
+
 import TextCards from "./components/TextCards";
-import HeroText from "./components/HeroText";
+import Hero from "./components/Hero";
 
 export default function Home() {
   const [count, setCounter] = useState(0);
 
   return (
     <>
-      <div className="flex flex-col md:flex-row items-center justify-center m-3 h-screen">
-        <div className="flex flex-col gap-4 items-center">
-          <Image
-            src={peppa}
-            width={450}
-            height={32}
-            alt="peppa"
-            className=" rounded-xl"
-          />
-          <p className="text-sm mt-[-12px]">Pepa the fucking Pig</p>
-        </div>
-        <HeroText />
-      </div>
-
+      <Hero />
+      <div className="h-[50vh]"> tet</div>
       <TextCards />
 
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-col items-center justify-center">
           <button
-            className="mt-8 button hover:hovered_button active:text-sm"
+            className="mt-8 rounded-l min-h-10 p-2 hover:text-pink-500  active:text-pink-500 active:text-sm"
             onClick={() => {
               setCounter((a) => a + 1);
             }}
@@ -39,7 +33,7 @@ export default function Home() {
           </button>
           <div>Fucks: {count}</div>
           <button
-            className="button hover:hovered_button active:text-sm"
+            className="rounded-l min-h-10 p-2 hover:text-pink-500 active:text-pink-500 active:text-sm"
             onClick={() => {
               setCounter(0);
             }}
