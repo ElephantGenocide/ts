@@ -1,13 +1,5 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import SimpleParallax from "simple-parallax-js";
-
-import peppaBg from "@/public/hero-paralax/peppa-bg-pc.png";
-import peppaHouse from "@/public/hero-paralax/peppa-house.png";
-import peppaClouds from "@/public/hero-paralax/peppa-clouds.png";
-import peppaSun from "@/public/hero-paralax/peppa-sun.png";
-import peppaLogo from "@/public/hero-paralax/peppa-logo.png";
 
 import TextCards from "./components/TextCards";
 import Hero from "./components/Hero";

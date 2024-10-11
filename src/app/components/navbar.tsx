@@ -13,21 +13,23 @@ const Navbar = () => {
     document.addEventListener("scroll", () => {
       window.scrollY > 1
         ? setNavStyle(
-            " dark:bg-[rgba(10,10,10,0.5)]  scale-[52] duration-[300ms] "
+            "bg-[rgba(237,237,237,0.5)] dark:bg-[rgba(10,10,10,0.5)]  scale-[52] duration-[300ms] "
           )
-        : setNavStyle(" dark:bg-[rgba(10,10,10,0)] h-0  duration-500");
+        : setNavStyle(
+            "bg-[rgba(237, 237, 237,0)] dark:bg-[rgba(10,10,10,0)] h-0  duration-500"
+          );
       if (window.scrollY > 800)
-        setNavStyle(" dark:bg-[rgba(10,10,10,1)] scale-[52] duration-300");
+        setNavStyle(
+          "bg-[rgba(237,237,237,1)] dark:bg-[rgba(10,10,10,1)] scale-[52] duration-300"
+        );
     });
   });
 
   return (
     <>
+      <div className={`fixed w-screen z-20 top-0 ${navStyle} h-1`}></div>
       <div
-        className={`fixed w-screen h-1 z-10 top-0 bg-background ${navStyle}`}
-      ></div>
-      <div
-        className={`flex fixed z-10  top-0 w-screen justify-between p-7 overflow-hidden`}
+        className={`flex fixed z-20  top-0 w-screen justify-between p-7 overflow-hidden`}
       >
         {logo}
         <ol className="gap-32 hidden md:flex">
@@ -57,7 +59,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="flex m-2 md:hidden">
+        <div className="flex m-2 md:hidden ">
           <button onClick={() => setOpen(open ? false : true)}>
             <MenuIcon />
           </button>
@@ -65,20 +67,11 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`fixed w-full z-10 right-0 top-0 h-full ${
-          open ? "flex flex-col" : "hidden"
+        className={`fixed z-10 right-0 left-0 duration-700 ${
+          open ? "translate-y-0" : "-translate-y-[200vh]"
         }`}
       >
-        <div className=" bg-background p-5 justify-between flex">
-          {logo}
-          <div className="flex m-2 md:hidden">
-            <button onClick={() => setOpen(open ? false : true)}>
-              <MenuIcon />
-            </button>
-          </div>
-        </div>
-
-        <div className="flex flex-col items-center h-screen bg-black bg-opacity-95">
+        <div className="flex flex-col items-center justify-evenly h-screen bg-background">
           <div className="flex flex-col gap-y-1 justify-center items-center my-20">
             {navLinks.map((item) => {
               return (
@@ -94,7 +87,7 @@ const Navbar = () => {
             })}
           </div>
 
-          <div className="flex font-bold my-5 text-4xl items-end">
+          <div className="flex font-bold mt-5 text-4xl items-end">
             <Link
               href={``}
               className="p-3 mr-2 rounded-lg transition focus:text-pink-500"

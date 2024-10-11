@@ -18,7 +18,7 @@ const Hero = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className="flex h-screen w-screen overflow-y-hidden perspective-200">
+    <div className="flex items-center justify-center h-screen w-screen overflow-y-hidden perspective-200">
       <Image alt="peppaBg" src={peppaBg} className="absolute top-0 h-screen" />
 
       <Image
@@ -38,15 +38,16 @@ const Hero = () => {
       <Image
         alt="peppaHouse"
         src={peppaHouse}
-        className="absolute top-[68%] lg:top-0 object-contain lg:h-screen"
+        className="absolute bottom-0 lg:top-0 object-contain lg:h-screen"
       />
-
-      <Image
-        alt="peppaLogo"
-        src={peppaLogo}
-        style={{ transform: `translateY(${offsetY * 0.55}px)` }}
-        className={`absolute left-[13%] lg:left-[35vw] bg-center top-[65vw] lg:top-[10vw] w-96 lg:w-[30vw]`}
-      />
+      <div className="flex items-center justify-center ">
+        <Image
+          alt="peppaLogo"
+          src={peppaLogo}
+          style={{ transform: `translateY(${offsetY * 0.65}px)` }}
+          className={`absolute w-[30vh] lg:w-[30vw] drop-shadow-2xl`}
+        />
+      </div>
     </div>
   );
 };
