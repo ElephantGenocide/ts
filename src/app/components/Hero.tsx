@@ -31,13 +31,14 @@ const Hero = () => {
       <Image
         alt="peppaClouds"
         src={peppaClouds}
-        style={{ transform: `translateY(${offsetY * 0.3}px)` }}
+        style={{ transform: `translateY(${offsetY * 0.4}px)` }}
         className="absolute top-[2vw] "
       />
 
       <Image
         alt="peppaHouse"
         src={peppaHouse}
+        style={{ transform: `translateY(${offsetY * 0.2}px)` }}
         className="absolute bottom-0 lg:top-0 object-contain lg:h-screen"
       />
       <div className="flex items-center justify-center ">

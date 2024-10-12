@@ -2,8 +2,9 @@
 import Link from "next/link";
 import React from "react";
 import { useState, useEffect } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
 import { logo, navLinks } from "../../public/stuff";
+
+import { Spin as Hamburger } from "hamburger-react";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -46,13 +47,13 @@ const Navbar = () => {
 
         <div className="gap-x-3 font-bold hidden md:flex">
           <Link
-            href={``}
+            href={`/login`}
             className="p-3 duration-200 rounded-lg transition hover:text-pink-500  hover:bg-background"
           >
             Log In
           </Link>
           <Link
-            href={``}
+            href={`/register`}
             className="p-3 duration-200 rounded-lg transition hover:text-pink-500 hover:bg-background"
           >
             Sign Up
@@ -60,16 +61,21 @@ const Navbar = () => {
         </div>
 
         <div className="flex m-2 md:hidden ">
-          <button onClick={() => setOpen(open ? false : true)}>
-            <MenuIcon />
-          </button>
+          <Hamburger
+            toggle={() => {
+              setOpen(open ? false : true);
+            }}
+            toggled={open}
+            size={25}
+            duration={0.5}
+          />
         </div>
       </div>
 
       <div
-        className={`fixed z-10 right-0 left-0 duration-700 ${
-          open ? "translate-y-0" : "-translate-y-[200vh]"
-        }`}
+        className={`fixed z-10 right-0 -top-[100vh] left-0 duration-[600ms] ease-in-out ${
+          open ? "translate-y-[100vh]" : "-translate-y-[100vh]"
+        } lg:hidden`}
       >
         <div className="flex flex-col items-center justify-evenly h-screen bg-background">
           <div className="flex flex-col gap-y-1 justify-center items-center my-20">
@@ -89,13 +95,13 @@ const Navbar = () => {
 
           <div className="flex font-bold mt-5 text-4xl items-end">
             <Link
-              href={``}
+              href={`/login`}
               className="p-3 mr-2 rounded-lg transition focus:text-pink-500"
             >
               Log In
             </Link>
             <Link
-              href={``}
+              href={`/register`}
               className="p-3 ml-2 rounded-lg transition focus:text-pink-500"
             >
               Sign Up
